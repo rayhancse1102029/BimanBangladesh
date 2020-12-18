@@ -1215,7 +1215,7 @@ a.box_news ul li {color: #3f2059;}
 }
 
     .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity.swapCityDisable .ico-be-leftRightArow, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity.swapCityDisable .ico-be-leftRightArow {
-        background: url(/content/fresco/snipe/dist/images/swipe.svg?e341848dbd38ba926518e6e2b18dda56) 50% no-repeat;
+        background: url(~/Content/fresco/snipe/dist/images/swipe.svg?e341848dbd38ba926518e6e2b18dda56) 50% no-repeat;
         opacity: .5
     }
 
@@ -1517,7 +1517,7 @@ a.box_news ul li {color: #3f2059;}
         .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date .custom-check.be-v2-active:before {
             background-color: #f34f4f !important;
             border: 1px solid #f34f4f;
-            background: url(/content/fresco/snipe/dist/images/checked.svg?3965dbb7c2e207cba40d0846da9787c1) 50% no-repeat;
+            background: url(~/Content/fresco/snipe/dist/images/checked.svg?3965dbb7c2e207cba40d0846da9787c1) 50% no-repeat;
             background-size: 10px 10px;
             border-radius: 3px
         }
@@ -2262,7 +2262,7 @@ a.box_news ul li {color: #3f2059;}
         }
 
             .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms ul.terms-list li i.bullet-ico {
-                background: url(/content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -139px -93px;
+                background: url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -139px -93px;
                 display: inline-block;
                 height: 8px;
                 margin: 6px 5px 0 0;
@@ -2286,7 +2286,7 @@ a.box_news ul li {color: #3f2059;}
         position: absolute;
         bottom: -19px;
         left: 42%;
-        background: url(/content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -162px -91px;
+        background: url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -162px -91px;
         width: 30px;
         height: 19px
     }
@@ -2474,7 +2474,7 @@ a.box_news ul li {color: #3f2059;}
 }
 
 .yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading i {
-    background: transparent url(/content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll -215px -335px
+    background: transparent url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll -215px -335px
 }
 
 .yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.hotels {
@@ -3284,7 +3284,7 @@ a.box_news ul li {color: #3f2059;}
 }
 
 .yt-booking-engine-snipe .be-container-snipe .be-activities .act-logo {
-    background: transparent url(/content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll;
+    background: transparent url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll;
     position: absolute;
     left: 5px
 }
@@ -3339,14 +3339,14 @@ a.box_news ul li {color: #3f2059;}
 }
 
 .yt-booking-engine-snipe .be-container-snipe .ico-be-radio {
-    background: url(/content/fresco/snipe/dist/images/radio-unchecked.png?ac6fcad87896c0f518a892469e3bca26) no-repeat;
+    background: url(~/Content/fresco/snipe/dist/images/radio-unchecked.png?ac6fcad87896c0f518a892469e3bca26) no-repeat;
     background-position: 0 -25px;
     height: 12px;
     width: 12px
 }
 
 .yt-booking-engine-snipe .be-container-snipe .ico-checkbox, .yt-booking-engine-snipe .be-container-snipe .ico-checkbox-checked {
-    background-image: url(/content/fresco/snipe/dist/images/ico-pg-customcheckBox.png?0d18682175ccb7f815106bef50347cb2);
+    background-image: url(~/Content/fresco/snipe/dist/images/ico-pg-customcheckBox.png?0d18682175ccb7f815106bef50347cb2);
     background-repeat: no-repeat;
     display: inline-block;
     margin: -1px 5px 0;
