@@ -1,8 +1,1772 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Keywords" content="Booking, Flight booking, cheap air tickets, domestic flights, international flights, Hotels, Travel in Bangladesh, Holiday Packages, airline ticket, discount tickets, Air Tickets">
+    <meta name="description" content="Biman Bangladesh Airlines, is the national flag carrier airline of Bangladesh. The airline provides international passenger and cargo services to Asia and Europe, as well as major domestic routes inside Bangladesh. It has air service agreements with 42 countries and currently flies to 16 different countries.">
+    <meta name="author" content="A4Aero">
+    <title>Biman Bangladesh Airlines Official Website</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="~/Content/panagea/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/panagea/css/style.css" rel="stylesheet">
+    <link href="~/Content/panagea/css/vendors.css" rel="stylesheet">
+    <link href="~/Content/lib/ladda/ladda-themeless.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <link href="~/Content/lib/wait-me/waitMe.min.css" rel="stylesheet" />
+
+    <link href="~/Content/panagea/css/color-red.css" rel="stylesheet">
+
+    <link href="~/Content/lib/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/panagea/css/home-search.css?v=2.1" rel="stylesheet" />
+    <link href="~/Content/i_home-search.css?v=2.1" rel="stylesheet" />
+    <link href="~/Content/lib/soap-icon/soap-icon.css" rel="stylesheet" />
+    <link href="~/Content/lib/touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/easy-autocomplete/easy-autocomplete.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/easy-autocomplete/flags.css" rel="stylesheet" />
+    <link href="~/Content/panagea/css/custom.css?v=1.17" rel="stylesheet">
+    <link href="~/Content/panagea/css/header.css" rel="stylesheet" />
+    <link href="~/Content/i_header.css" rel="stylesheet" />
+    <script src="https://apis.google.com/js/api:client.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script type="e40a44cb2071203296c3da0f-text/javascript">
+        var googleUser; // The current user.
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: "402927139781-ftmg9rhfsgh6rav15cubnsoejeglattq.apps.googleusercontent.com",
+                cookiepolicy: 'single_host_origin',
+                scope: "profile email" // this isn't required
+            }).then(function (auth2) {
+                var button = document.querySelector('#google-join-btn');
+                button.addEventListener('click', function () {
+                    //alert("OK")
+                    auth2.signIn();
+                    googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+                    JoinWithGoogle(googleUser.getAuthResponse().id_token, googleUser.getBasicProfile().getId(), googleUser.getBasicProfile().getEmail(),
+                                    googleUser.getBasicProfile().getGivenName(), googleUser.getBasicProfile().getFamilyName(),
+                                    googleUser.getBasicProfile().getImageUrl());
+                });
+            });
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117897822-7" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script type="e40a44cb2071203296c3da0f-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117897822-7');
+    </script>
+</head>
+<body>
+    <div>
+        <header class="header sticky" style="position: relative;">
+            <div class="wrapper">
+                <div class="container">
+                    <div id="preloader"><div data-loader="circle-side"></div></div>
+                    <div id="logo">
+                        <a href="/">
+                            <img src="/Content/panagea/images/logo.png" data-retina="true" alt="" style="height:70px;margin-top: 2px;" class="logo_normal">
+                        </a>
+                    </div>
+                    <a href="#menu" class="btn_mobile">
+                        <div class="hamburger hamburger--spin" id="hamburger">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <nav id="menu" class="main-menu float-right">
+                        <ul>
+
+                            <li><span><a href="/">Home</a></span></li>
+                            <li>
+                                <span>
+                                    <a class="top-menu-txt" href="/plantrip">Plan a Trip</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="/">Book Flight</a>
+                                    </li>
+                                    <li>
+                                        <a href="/booking/manage">Manage Booking</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.bimanholidays.com/" target="_blank">Book Holidays</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/flightmap">Destination Map</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/guide">Destination Guide</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/optiontown">Optiontown</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/creditcardverify">Credit Card Authorization</a>
+                                    </li>
+                                    <li>
+                                        <a href="/booking/refundrequest">Manual Refund Request</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/crpolicy">Change/Refund Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="/plantrip/reportingtime">Reporting Time</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    <a class="top-menu-txt" href="/loyaltyclub">Loyalty Club</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="#sign-in-dialog" class="smart-auth-btn" data-title="Login">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="/member/registration">Join the Club</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loyaltyclub/earn">Earning Miles</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loyaltyclub/redeem">Redeeming Miles</a>
+                                    </li>
+                                    <li>
+                                        <a href="#sign-in-dialog" class="smart-auth-btn" data-title="Login">Claim Missing Miles</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loyaltyclub/faq">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loyaltyclub/terms">Terms and Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="/loyaltyclub/loyaltycontact">Loyalty Contact</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    <a class="top-menu-txt" href="/flightinfo">Flight Info</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="/booking/flightstatus">Flight Status</a>
+                                    </li>
+                                    <li>
+                                        <a href="/flightinfo/sitting">Seat Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="/flightinfo/baggage">Baggage Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="/flightinfo/prohibitedarticles">Prohibited Articles</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    <a class="top-menu-txt" href="/service">Services</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="/service/airport">Airport Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="/service/flight">On-Board Your Flight</a>
+                                    </li>
+                                    <li>
+                                        <a href="/service/groundHandling">Ground Handling</a>
+                                    </li>
+                                    <li>
+                                        <a href="/service/dutyfee">In-Flight Duty Free</a>
+                                    </li>
+                                    <li>
+                                        <a href="/service/inflightmagazine">In-Flight Magazine</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://biman.ifdhub.com" target="_blank">In-Flight Entertainment</a>
+                                    </li>
+                                    <li>
+                                        <a href="/service/medical">Medical</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://biman.preorder-shop.com" target="_blank">Biman Preorder-Shop</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    <a class="top-menu-txt" href="/about">About Us</a>
+                                </span>
+                                <ul>
+                                    <li><a href="/about/contactus">Contact Us</a></li>
+                                    <li><a href="/about/customerservice">Customer Service</a></li>
+                                    <li><a href="/about/corporateprofile">Corporate Profile</a></li>
+                                    <li><a href="/about/fleet">Fleet Information</a></li>
+                                    <li><a href="/news">News &amp; Announcements</a></li>
+                                </ul>
+                            </li>
+                            <li class="hide-desktop">
+                                <span>
+                                    <a class="top-menu-txt" href="/about/corporateprofile">Corporate</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="/about/chairmanmessage">Chairman's Message</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/ceoMessage">CEO's Message</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/boardofdirectors">Board of Directors</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/execdirectors">Executive Directors</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="hide-desktop">
+                                <span>
+                                    <a class="top-menu-txt" href="#">Useful Links</a>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <a href="/sitemap/privacypolicy">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sitemap/termsconditions"> Terms & Conditions</a>
+                                    </li>
+                                    <li><a href="/about/tender">Tender</a></li>
+                                    <li><a target="_blank" href="https://a4aero.s3-ap-southeast-1.amazonaws.com/biman/COVID_19_Helth_Declarion_Form.pdf">Health Declaration Form</a></li>
+                                </ul>
+                            </li>
+                            <li class="d-lg-none">
+                                <span>
+                                    <a class="top-menu-txt" href="#">My Account</a>
+                                </span>
+                                <ul id="top_menu">
+                                    <li><a style="border:0;" href="/member/registration">Sign up</a></li>
+                                    <li><a href="#sign-in-dialog" class="smart-auth-btn">Log-in</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <ul id="top_menu">
+                        <li><a style="border:0;" href="/member/registration">Sign up</a></li>
+                        <li>|</li>
+                        <li><a href="#sign-in-dialog" class="smart-auth-btn">Log-in</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero_single version_2">
+                <div class="Modern-Slider" id="home-slider-items">
+
+                    <div class="item">
+                        <div class="img-fill">
+                            <img src="/content/panagea/images/bg-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper slider-wrapper">
+                    <div class="container">
+                        <div class="ticker-box">
+                            <div style="text-align:left;padding: 10px 15px;background-color: rgba(255, 255, 255, 0.75);border-radius: 2px;color: #444;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span style="float:left;margin-right:10px;color: #ea2330;"><i style="color: #ea2330;line-height: 20px;" class="icon-attention-2"></i> IMPORTANT:</span>
+                                        <div id="et-box" class="vticker" style="display:none;"></div>
+                                        <a href="#" style="position: absolute;right: 10px;top: 2px;" class="toggle-et"><i class="icon-pause-outline"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yt-booking-engine-snipe" style="margin-bottom:50px;margin-top:15px;">
+                            <div class="be-container-snipe">
+                                <div class="clearfix">
+                                    <div class="nudge-arrow-x"></div>
+                                    <ul class="be-tabs-snipe clearfix">
+                                        <li><a data-id="flights" href="javascript:void(0);" target="_self" title="Flights" class="active-tab  action-btn"><i class="soap-icon-plane"></i> <span>Flights</span> <span class="betaBookingEngine"></span></a></li>
+                                        <li>
+                                            <a data-id="m-booking" href="javascript:void(0);" target="_self" title="Manage Booking" class="action-btn">
+                                                <i class="">
+                                                    <svg class="bi bi-gear-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 01-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 01.872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 012.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 012.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 01.872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 01-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 01-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 100-5.86 2.929 2.929 0 000 5.858z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </i> <span>Manage Booking</span>
+                                            </a>
+                                        </li>
+                                        <li><a data-id="f-status" href="javascript:void(0);" target="_self" title="Flight Status" class="action-btn"><i class="soap-icon-insurance"></i> <span>Flight Status</span></a></li>
+                                        <li><a data-id="holidays" href="https://bimanholidays.com" target="_blank" title="Holidays" class=""><i class="soap-icon-beach"></i> <span>Holidays</span></a></li>
+                                    </ul>
+                                </div>
+                                <div id="flights" class="action-forms">
+                                    <form id="flt-search-form" class="v2-search-form" action="/flights/search" method="get">
+                                        <div id="BE_flight_form_wrapper" class="be-flights" type="flights">
+                                            <div class="journey-details clearfix">
+                                                <div class="oneway-roundtrip CitySwap" style="">
+                                                    <input id="s-0" class="journey-sn" type="hidden" value="1" name="OriginDestinationInformation[0].SequenceNumber" />
+                                                    <ul class="clearfix">
+                                                        <li class="w225 first-dest-row">
+                                                            <div>
+                                                                <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                <input id="from-0" data-id="-1" name="origintxt" placeholder="Flying from airport ..." data-val-required="Flying from is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup validate-looksup focus-action" autocomplete="off" style="border:none !important;">
+                                                                <input class="s-item" type="hidden" name="origin" />
+                                                                <span data-valmsg-replace="true" data-valmsg-for="origintxt" class="field-validation-valid"></span>
+                                                            </div>
+                                                            <a href="javascript:void(0);" data-swap="true" tabindex="-1" class="beSwapCity"><i tabindex="-1" title="Swap Origin City and Destination City" class="sprite-booking-engine ico-be-leftRightArow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a>
+                                                        </li>
+                                                        <li class="w225 first-dest-row">
+                                                            <div>
+                                                                <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                <input id="to-0" data-id="0" name="destinationtxt" placeholder="Flying to airport ..." data-val-required="Flying to is required" data-val="true" spellcheck="false" type="text" class="cityPadLeft ac_input dest_ac airport-lookup validate-looksup focus-action to-looksup" autocomplete="off" style="border:none !important;">
+                                                                <input class="s-item" type="hidden" name="destination" />
+                                                                <span style="padding-left: 24px;" data-valmsg-replace="true" data-valmsg-for="destinationtxt" class="field-validation-valid"></span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="w170">
+                                                            <section class="calendarComponent">
+                                                                <input class="s-item" type="hidden" value="" name="dp" />
+                                                                <input id="dp-0" value="" name="dptxt_0" data-next="rt-0" data-id="0" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Depart Date" data-val-required="Depart date required" data-val="true" class="BE_flight_origin_date date-input" style="border:none !important;"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                            </section>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="dptxt_0" class="field-validation-valid"></span>
+                                                        </li>
+                                                        <li id="first-ret-date" class="w170" style="">
+                                                            <section class="calendarComponent">
+                                                                <input class="s-item" type="hidden" value="" name="rt" />
+                                                                <input id="rt-0" value="" name="rt_0" data-next="" data-id="0" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Return Date" data-val-required="Return date required" data-val="true" class="BE_flight_arrival_date date-input" style="border:none !important;"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                            </section>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="rt_0" class="field-validation-valid"></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="flight_passengerBox">
+                                                    <div id="BE_flight_paxInfoBox" class="pax-details ddn-parent flight_passengerBox">
+                                                        <div class="panel-dropdown">
+                                                            <a href="#" id="traveller-summary" style="color: #000;padding-top: 3px;">1 traveller, economy</a>
+                                                            <div class="panel-dropdown-content">
+                                                                <div class="row" style="margin-bottom:10px;">
+                                                                    <div class="col-7">
+                                                                        <label class="t-spinner-label">Adult</label>
+                                                                    </div>
+                                                                    <div class="col-5 no-letf-padding">
+                                                                        <input id="flt-people-adult" style="" class="t-spinner text-center s-item" readonly="readonly" type="text" value="1" name="ADT">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row" style="margin-bottom:10px;">
+                                                                    <div class="col-7">
+                                                                        <label class="t-spinner-label">Child <span>2 - 12 yrs</span></label>
+                                                                    </div>
+                                                                    <div class="col-5 no-letf-padding">
+                                                                        <input id="flt-people-child" class="t-spinner text-center s-item" readonly="readonly" type="text" value="0" name="CHD">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row" style="margin-bottom:10px;">
+                                                                    <div class="col-7">
+                                                                        <label class="t-spinner-label">Infant <span>Below 2 yrs</span></label>
+                                                                    </div>
+                                                                    <div class="col-5 no-letf-padding">
+                                                                        <input id="flt-people-infant" class="t-spinner text-center s-item" readonly="readonly" type="text" value="0" name="INF">
+                                                                    </div>
+                                                                </div>
+                                                                <hr style="margin: 0;" />
+                                                                <div class="row" style="margin-bottom:10px; margin-top:10px;">
+                                                                    <div class="col-6">
+                                                                        <div class="checkboxes float-left">
+                                                                            <label class="container_check" style="color: #000;font-size: 1em;padding-top: 3px;font-weight: bold;">
+                                                                                Economy
+                                                                                <input class="s-item" type="radio" name="Class" checked= checked value="ECONOMY" data-txt="Economy">
+                                                                                <span class="checkmark"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="checkboxes float-left">
+                                                                            <label class="container_check" style="color: #000;font-size: 1em;padding-top: 3px;font-weight: bold;">
+                                                                                Business
+                                                                                <input class="s-item" type="radio" name="Class" value="BUSINESS" data-txt="Business">
+                                                                                <span class="checkmark"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-12" style="margin-top:10px;">
+                                                                        <div class="checkboxes float-left">
+                                                                            <label class="container_check" style="color: #000;font-size: 1em;padding-top: 3px;font-weight: bold;">
+                                                                                Any Cabin
+                                                                                <input class="s-item" type="radio" name="Class" value="" data-txt="Any Cabin">
+                                                                                <span class="checkmark"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ripple-parent search-height"><button id="flt-search-btn" type="button" class="search-btn ladda-button" data-style="zoom-in">Search</button></div>
+                                            </div>
+                                            <div id="mc-box">
+                                                <div id="mc-1" class="journey-details clearfix mc-boxes" style="margin-top:2px;display:none; ">
+                                                    <input id="s-1" class="journey-sn" type="hidden" value="-1" name="OriginDestinationInformation[1].SequenceNumber" />
+                                                    <div class="oneway-roundtrip CitySwap" style="">
+                                                        <ul class="clearfix">
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="from-1" data-id="-1" name="origintxt_1" placeholder="Flying from airport ..." data-val-required="Flying from is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup focus-action" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="origin_1" />
+                                                                    <span data-valmsg-replace="true" data-valmsg-for="origintxt_1" class="field-validation-valid"></span>
+                                                                </div>
+                                                                <a href="javascript:void(0);" data-swap="true" tabindex="-1" class="beSwapCity"><i tabindex="-1" title="Swap Origin City and Destination City" class="sprite-booking-engine ico-be-leftRightArow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a>
+                                                            </li>
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="to-1" data-id="1" name="destinationtxt_1" placeholder="Flying to airport ..." data-val-required="Flying to is required" data-val="true" spellcheck="false" type="text" class="cityPadLeft ac_input dest_ac airport-lookup focus-action to-lookup" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="destination_1" />
+                                                                    <span style="padding-left: 24px;" data-valmsg-replace="true" data-valmsg-for="destinationtxt_1" class="field-validation-valid"></span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="w170">
+                                                                <section class="calendarComponent">
+                                                                    <input class="s-item" type="hidden" value="" name="dp_1" />
+                                                                    <input id="dp-1" data-next="dp-2" data-id="1" value="" name="dp-1" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Depart Date" data-val-required="Depart date required" data-val="true" class="BE_flight_origin_date date-input"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                                </section>
+                                                                <span data-valmsg-replace="true" data-valmsg-for="dp-1" class="field-validation-valid"></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flight_passengerBox">
+                                                        <div class="multi-btns">
+                                                            <a href="#" id="r-1" data-id="1" class="city-remove-btn"><i class="pe-7s-close"></i></a>
+                                                            <a href="#" id="a-1" data-id="1" class="city-add-btn">ADD CITY</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="mc-2" class="journey-details clearfix mc-boxes" style="margin-top:2px;display:none; ">
+                                                    <input id="s-2" class="journey-sn" type="hidden" value="-1" name="OriginDestinationInformation[2].SequenceNumber" />
+                                                    <div class="oneway-roundtrip CitySwap" style="">
+                                                        <ul class="clearfix">
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="from-2" data-id="-1" name="origintxt_2" placeholder="Flying from airport ..." data-val-required="Flying from is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup focus-action" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="origin_2" />
+                                                                    <span data-valmsg-replace="true" data-valmsg-for="origintxt_2" class="field-validation-valid"></span>
+                                                                </div>
+                                                                <a href="javascript:void(0);" data-swap="true" tabindex="-1" class="beSwapCity"><i tabindex="-1" title="Swap Origin City and Destination City" class="sprite-booking-engine ico-be-leftRightArow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a>
+                                                            </li>
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="to-2" data-id="2" name="destinationtxt_2" placeholder="Flying to airport ..." data-val-required="Flying to is required" data-val="true" spellcheck="false" type="text" class="cityPadLeft ac_input dest_ac airport-lookup focus-action to-lookup" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="destination_2" />
+                                                                    <span style="padding-left: 24px;" data-valmsg-replace="true" data-valmsg-for="destinationtxt_2" class="field-validation-valid"></span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="w170">
+                                                                <section class="calendarComponent">
+                                                                    <input class="s-item" type="hidden" value="" name="dp_2" />
+                                                                    <input id="dp-2" data-next="dp-3" data-id="2" value="" name="dp-2" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Depart Date" data-val-required="Depart date required" data-val="true" class="BE_flight_origin_date date-input"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                                </section>
+                                                                <span data-valmsg-replace="true" data-valmsg-for="dp-2" class="field-validation-valid"></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flight_passengerBox">
+                                                        <div class="multi-btns">
+                                                            <a href="#" id="r-2" data-id="2" class="city-remove-btn"><i class="pe-7s-close"></i></a>
+                                                            <a href="#" id="a-2" data-id="2" class="city-add-btn">ADD CITY</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="mc-3" class="journey-details clearfix mc-boxes" style="margin-top:2px;display:none; ">
+                                                    <input id="s-3" class="journey-sn" type="hidden" value="-1" name="OriginDestinationInformation[3].SequenceNumber" />
+                                                    <div class="oneway-roundtrip CitySwap" style="">
+                                                        <ul class="clearfix">
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="from-3" data-id="-1" name="origintxt_3" placeholder="Flying from airport ..." data-val-required="Flying from is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup focus-action" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="origin_3" />
+                                                                    <span data-valmsg-replace="true" data-valmsg-for="origintxt_3" class="field-validation-valid"></span>
+                                                                </div>
+                                                                <a href="javascript:void(0);" data-swap="true" tabindex="-1" class="beSwapCity"><i tabindex="-1" title="Swap Origin City and Destination City" class="sprite-booking-engine ico-be-leftRightArow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a>
+                                                            </li>
+                                                            <li class="w315">
+                                                                <div>
+                                                                    <i class="icon-spin6 animate-spin eac-loading"></i>
+                                                                    <input id="to-3" data-id="3" name="destinationtxt_3" placeholder="Flying to airport ..." data-val-required="Flying to is required" data-val="true" spellcheck="false" type="text" class="cityPadLeft ac_input dest_ac airport-lookup focus-action to-lookup" autocomplete="off">
+                                                                    <input class="s-item" type="hidden" name="destination_3" />
+                                                                    <span style="padding-left: 24px;" data-valmsg-replace="true" data-valmsg-for="destinationtxt_3" class="field-validation-valid"></span>
+                                                                </div>
+                                                            </li>
+                                                            <li class="w170">
+                                                                <section class="calendarComponent">
+                                                                    <input class="s-item" type="hidden" value="" name="dp_3" />
+                                                                    <input id="dp-3" data-next="dp-4" data-id="3" value="" name="dp-3" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Depart Date" data-val-required="Depart date required" data-val="true" class="BE_flight_origin_date date-input"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                                </section>
+                                                                <span data-valmsg-replace="true" data-valmsg-for="dp-3" class="field-validation-valid"></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flight_passengerBox">
+                                                        <div class="multi-btns">
+                                                            <a href="#" id="r-3" data-id="3" class="city-remove-btn"><i class="pe-7s-close"></i></a>
+                                                            <a href="#" id="a-3" data-id="3" class="city-add-btn">ADD CITY</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mor-option">
+                                                <ul class="selc-flight-options prefer small-check" style="margin-left:10px;">
+                                                    <li class="no-border multiCity-snipe">
+                                                        <div class="checkboxes float-left">
+                                                            <label class="container_check">
+                                                                Oneway Trip
+                                                                <input class="s-item" type="radio" name="type" value="O">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkboxes float-left">
+                                                            <label class="container_check">
+                                                                Round Trip
+                                                                <input class="s-item" checked= checked type="radio" name="type" value="R">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <input type="hidden" name="id" />
+                                        <input type="hidden" class="s-item" name="isredeem" value="False" />
+                                    </form>
+                                </div>
+                                <div id="m-booking" class="action-forms" style="display:none;">
+                                    <form id="manage-booking-form" action="/booking/reservation" method="get">
+                                        <div id="BE_flight_form_wrapper" class="be-flights" type="flights">
+                                            <div class="journey-details clearfix manage-booking">
+                                                <div class="oneway-roundtrip CitySwap" style="width:50%">
+                                                    <ul class="clearfix">
+                                                        <li style="width: 50%;">
+                                                            <div>
+                                                                <input id="from-0" value="" name="pnr" placeholder="Booking ID or PNR" data-val-required="Booking ID/PNR is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup validate-looksup focus-action" autocomplete="off" style="border:none !important;">
+                                                            </div>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="pnr" class="field-validation-valid"></span>
+                                                        </li>
+                                                        <li style="width: 50%;">
+                                                            <div>
+                                                                <input id="from-1" value="" name="lname" placeholder="Passenger's Last Name" data-val-required="Last Name is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac airport-lookup validate-looksup focus-action" autocomplete="off" style="border:none !important;">
+                                                            </div>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="lname" class="field-validation-valid"></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div style="width:30%;" class="ripple-parent search-height"></div>
+                                                <div style="width:20%;" class="ripple-parent search-height"><button style="width:100%;" id="manage-booking-btn" type="button" class="search-btn ladda-button" data-style="zoom-in">Find Reservation</button></div>
+                                            </div>
+                                            <div class="mor-option" style="color: #fff;padding-left: 15px;">
+                                                NOTE: Only bookings made on the website can be managed here. You can view reservation details for others.
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="f-status" class="action-forms" style="display:none;">
+                                    <form id="flight-status-form" action="/booking/flightstatus" method="get">
+                                        <div id="BE_flight_form_wrapper" class="be-flights" type="flights">
+                                            <div class="journey-details clearfix manage-booking">
+                                                <div class="oneway-roundtrip CitySwap" style="width:50%">
+                                                    <ul class="clearfix">
+                                                        <li style="width: 50%;">
+                                                            <div>
+                                                                <input value="" name="fn" placeholder="Flight Number" data-val-required="Flight Number is required" data-val="true" spellcheck="false" type="text" class="cityPadRight ac_input origin_ac num-val" autocomplete="off" style="border:none !important;padding-left:40px;">
+                                                                <span style="position:absolute;left: 15px;top: 24px;font-size: 1.14286em;">BG </span>
+                                                            </div>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="fn" class="field-validation-valid"></span>
+                                                        </li>
+                                                        <li style="width: 50%;">
+                                                            <section class="calendarComponent">
+                                                                <input type="hidden" value="12/18/2020" name="dt" />
+                                                                <input id="dp-dt" value="18 Dec 2020" name="dp-dt" data-next="" data-id="" data-start="18 Dec 2020" data-end="18 Dec 2021" readonly="readonly" type="text" autocomplete="false" placeholder="Departure Date" data-val-required="Depart date required" data-val="true" class="BE_flight_origin_date date-input" style="border:none !important;"> <i class="calender-icon icon-inside soap-icon-calendar"></i>
+                                                            </section>
+                                                            <span data-valmsg-replace="true" data-valmsg-for="dp-dt" class="field-validation-valid"></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div style="width:30%;" class="ripple-parent search-height"></div>
+                                                <div style="width:20%;" class="ripple-parent search-height"><button style="width:100%;" id="flight-status-btn" type="button" class="search-btn ladda-button" data-style="zoom-in">View Flight Status</button></div>
+                                            </div>
+                                            <div class="mor-option" style="color: #fff;padding-left: 15px;">
+                                                NOTE:
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg_color_1">
+                <div class="container margin_80_55">
+                    <div class="main_title_2">
+                        <span><em></em></span>
+                        <h3>News and Events</h3>
+                        <p>Check for Biman Bangladesh news and updates</p>
+                    </div>
+                    <div id="news-content">
+                        <div style="text-align:center;width: 100%;"><img src="~/Content/images/loading.gif" /></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div>
+                <div class="container margin_60_35">
+                    <div class="main_title_2">
+                        <span><em></em></span>
+                        <h2>Promotional Videos</h2>
+                    </div>
+                    <div class="grid">
+                        <ul class="magnific-gallery">
+                            <li>
+                                <figure>
+                                    <img src="~/Content/images/service/bb.jpg" alt="">
+                                    <figcaption>
+                                        <div class="caption-content">
+                                            <a href="https://www.youtube.com/watch?v=OtwLQ2Ai6D4" class="video" title="Why Biman Bangladesh Airlines?">
+                                                <i class="pe-7s-film"></i>
+                                                <p>Why Biman Bangladesh Airlines?</p>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="container-fluid margin_80_0 bg_color_1">
+                <div class="main_title_2">
+                    <span><em></em></span>
+                    <h2>Featured destinations from Dhaka</h2>
+                    <p>Great opportunities to travel <strong>|</strong> Take a holiday <strong>|</strong> Visit Family <strong>|</strong> Enjoy yourself</p>
+                </div>
+                <div class="container">
+                    <div>
+                        <div class=" accordion_2">
+                            <div class="container margin_60_35">
+                                <div class="isotope-wrapper">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-6 col-md-6 isotope-item popular">
+                                            <div class="box_grid">
+                                                <figure>
+                                                    <a href=/plantrip/bangladesh class="grid_item">
+                                                        <img src="/Content/images/destination-guide/bangladesh.png" style="height:100%" class="img-fluid" alt="">
+                                                        <div class="read_more"><span id="bangladeshPartial">Read more</span></div>
+                                                        <div class="info">
+                                                            <h3>Bangladesh</h3>
+                                                        </div>
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-lg-6 col-md-6 isotope-item popular">
+                                            <div class="box_grid">
+                                                <figure>
+                                                    <a href=/plantrip/europe class="grid_item">
+                                                        <img src="/Content/images/destination-guide/europe.png" style="height:100%" class="img-fluid" alt="">
+                                                        <div class="read_more"><span>Read more</span></div>
+                                                        <div class="info">
+                                                            <h3>Europe</h3>
+                                                        </div>
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-lg-6 col-md-6 isotope-item popular">
+                                            <div class="box_grid">
+                                                <figure>
+                                                    <a href=/plantrip/middleeast class="grid_item">
+                                                        <img src="/Content/images/destination-guide/mideast.png" style="height:100%" class="img-fluid" alt="">
+                                                        <div class="read_more"><span>Read more</span></div>
+                                                        <div class="info">
+                                                            <h3>Middle East</h3>
+                                                        </div>
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-lg-6 col-md-6 isotope-item popular">
+                                            <div class="box_grid">
+                                                <figure>
+                                                    <a href=/plantrip/asia class="grid_item">
+                                                        <img src="/Content/images/destination-guide/asia.png" style="height:100%" class="img-fluid" alt="">
+                                                        <div class="read_more"><span>Read more</span></div>
+                                                        <div class="info">
+                                                            <h3>Asia</h3>
+                                                        </div>
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <p class="btn_home_align"><a href="plantrip/guide" class="btn_1 rounded">View all destinations</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div class="foot-mob-sec tb-space">
+                    <div class="rows container">
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12 family"> <img src="/Content/site-images/mobile.png" alt=""> </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <div class="foot-mob-app">
+                                    <h2>Download the BIMAN app today</h2>
+                                    <p>Everything Biman Bangladesh Airlines. At your fingertips. </p>
+                                    <ul>
+                                        <li><i class="icon-check" aria-hidden="true"></i> Easy Flight Booking</li>
+                                        <li><i class="icon-check" aria-hidden="true"></i> Check Flight Status</li>
+                                        <li><i class="icon-check" aria-hidden="true"></i> Manage Your Bookings</li>
+                                        <li><i class="icon-check" aria-hidden="true"></i> Update Travellers Information</li>
+                                        <li><i class="icon-check" aria-hidden="true"></i> Seat Selection, Date Change, Refund, etc</li>
+                                    </ul>
+                                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.a4aero.Biman"><img src="/Content/site-images/android.png" alt=""> </a>
+                                    <a target="_blank" href="https://apps.apple.com/us/app/biman-bangladesh-airlines/id1483637537"><img src="/Content/site-images/apple.png" alt=""> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="rs-form-data" style="display:none;"></div>
+
+        <style>
+            .footer-link-color {
+                color: white;
+            }
+
+            a.footer-link-color:hover {
+                color: red;
+            }
+        </style>
+        <footer>
+            <div class="container margin_60_35">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h5>Useful Links</h5>
+                        <ul class="links">
+                            <li>
+                                <a href="/sitemap/privacypolicy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="/sitemap/termsconditions">
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li><a href="/about/tender">Tender</a></li>
+                        </ul>
+                        <div class="follow_us">
+                            <ul style="margin-bottom: 0;margin-top: -10px;">
+                                <li>Follow us</li>
+                                <li style="font-size: 25px;"><a target="_blank" href="https://www.facebook.com/bimanbalaka"><i class="icon-facebook-squared" style=""></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><a href="/agents" class="footer-link-color">Travel Agents</a> </h5>
+                        <ul class="links">
+                            <li><a href="/agents">Now Available</a></li>
+                            <li><a href="/agents/ota">Online Travel Agency (OTA)</a></li>
+                            <li><a href="https://tap.biman-airlines.com">Travel Agency Login</a></li>
+                            <li><a href="/agents/bookingpolicy">Booking Policy</a></li>
+                            <li><a href="/agents/admpolicy">ADM Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><a href="/about" class="footer-link-color">About</a></h5>
+                        <ul class="links">
+                            <li><a href="/about/Careers">Careers</a></li>
+                            <li><a href="/about/citizenscharter">Citizen Charter</a></li>
+                            <li><a href="/about/contactus">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><a href="/about/corporateprofile" class="footer-link-color">Corporate</a> </h5>
+                        <ul class="links">
+                            <li>
+                                <a href="/about/chairmanmessage">Chairman's Message</a>
+                            </li>
+                            <li>
+                                <a href="/about/ceoMessage">CEO's Message</a>
+                            </li>
+                            <li>
+                                <a href="/about/boardofdirectors">Board of Directors</a>
+                            </li>
+                            <li>
+                                <a href="/about/execdirectors">Executive Directors</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul id="footer-selector">
+                            <li>
+                                <img style="height:31px;" src="/Content/images/payment-icons/p-amex.png" alt="">
+                                <img style="height:31px;" src="/Content/images/payment-icons/p-visa.png" alt="">
+                                <img style="height:31px;" src="/Content/images/payment-icons/p-master.png" alt="">
+                                <img style="height:29px;" src="/Content/images/payment-icons/p-nexus.png" alt="">
+                                <img style="height:29px;" src="/Content/images/payment-icons/p-rocket.png" alt="">
+                                <img style="height:29px;" src="/Content/images/payment-icons/p-bkash.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul id="additional_links">
+                            <li><span>© 2020 Biman Bangladesh Airlines Ltd.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div style="display:none;">
+        <div id="sign-in-dialog" class="my-dialog zoom-anim-dialog mfp-hide" style="max-width: 400px; ">
+            <div class="my-dialog-header">
+                <h3 id="sm-header">Member Login</h3>
+            </div>
+            <div style="color:#f21b1b;line-height: 1.2em;margin-bottom: 15px;margin-top: -16px;font-size: 12px;border: 1px solid #ccc;padding: 10px;">
+                Dear BLC Member,<br />
+                We've migrated to the new BLC system. To login your BLC account please recover your password using email address and <strong>"Forgot Password"</strong> option. <br /> <br />Click <strong><a href="https://a4aero.s3-ap-southeast-1.amazonaws.com/biman/blc-recover-my-password.pdf" target="_blank">here</a></strong> to check the details password recovery procedure.
+            </div>
+            <div id="login-box" class="auth-forms sign-in-wrapper">
+                <form id="auth-login" method="post" action="/member/login" class="form-horizontal login-form" role="form">
+                    <input name="__RequestVerificationToken" type="hidden" value="vTS2vWgFKAinpPSqShT4689pk3jqpOEmLEhq7SCZWqdQh9pZ0Bls99u9TqMABO9ncrN4tlPClMYlccRx-3bjmN6OAg-j5NNPpUoG3C-uHJw1" />
+                    <input id="login-url" type="hidden" name="Url" value="" />
+                    <div class="form-group">
+                        <label>Log-in Preference</label>
+                        <div class="">
+                            <div class="app-radio inline">
+                                <label>
+                                    <input checked="checked" data-id="sa-username" data-title="Email Address" class="login-preference" type="radio" value="1" name="ActionType"> Email&nbsp;<span></span>
+                                </label>
+                            </div>
+                            <div class="app-radio inline">
+                                <label>
+                                    <input data-id="sa-username" data-title="Mobile number" class="login-preference" type="radio" value="2" name="ActionType"> Mobile&nbsp;<span></span>
+                                </label>
+                            </div>
+                            <div class="app-radio inline">
+                                <label>
+                                    <input data-id="sa-username" data-title="Loyalty ID" class="login-preference" type="radio" value="3" name="ActionType"> Loyalty ID&nbsp;<span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="login-un-title">Email Address</label>
+                        <div class="">
+                            <div class="input-group-addon" style="display:none;">
+                                <select id="sa-country-code" class="minimal" name="CountryCode" style="width:85px;">
+                                    <option value="1" data-code="1">+1</option>
+                                    <option value="1242" data-code="1242">+1242</option>
+                                    <option value="1246" data-code="1246">+1246</option>
+                                    <option value="1264" data-code="1264">+1264</option>
+                                    <option value="1268" data-code="1268">+1268</option>
+                                    <option value="1284" data-code="1284">+1284</option>
+                                    <option value="1340" data-code="1340">+1340</option>
+                                    <option value="1345" data-code="1345">+1345</option>
+                                    <option value="1441" data-code="1441">+1441</option>
+                                    <option value="1473" data-code="1473">+1473</option>
+                                    <option value="1649" data-code="1649">+1649</option>
+                                    <option value="1664" data-code="1664">+1664</option>
+                                    <option value="1670" data-code="1670">+1670</option>
+                                    <option value="1671" data-code="1671">+1671</option>
+                                    <option value="1684" data-code="1684">+1684</option>
+                                    <option value="1721" data-code="1721">+1721</option>
+                                    <option value="1758" data-code="1758">+1758</option>
+                                    <option value="1767" data-code="1767">+1767</option>
+                                    <option value="1784" data-code="1784">+1784</option>
+                                    <option value="1868" data-code="1868">+1868</option>
+                                    <option value="1869" data-code="1869">+1869</option>
+                                    <option value="1876" data-code="1876">+1876</option>
+                                    <option value="20" data-code="20">+20</option>
+                                    <option value="211" data-code="211">+211</option>
+                                    <option value="212" data-code="212">+212</option>
+                                    <option value="213" data-code="213">+213</option>
+                                    <option value="216" data-code="216">+216</option>
+                                    <option value="218" data-code="218">+218</option>
+                                    <option value="220" data-code="220">+220</option>
+                                    <option value="221" data-code="221">+221</option>
+                                    <option value="222" data-code="222">+222</option>
+                                    <option value="223" data-code="223">+223</option>
+                                    <option value="224" data-code="224">+224</option>
+                                    <option value="225" data-code="225">+225</option>
+                                    <option value="226" data-code="226">+226</option>
+                                    <option value="227" data-code="227">+227</option>
+                                    <option value="228" data-code="228">+228</option>
+                                    <option value="229" data-code="229">+229</option>
+                                    <option value="230" data-code="230">+230</option>
+                                    <option value="231" data-code="231">+231</option>
+                                    <option value="232" data-code="232">+232</option>
+                                    <option value="233" data-code="233">+233</option>
+                                    <option value="234" data-code="234">+234</option>
+                                    <option value="235" data-code="235">+235</option>
+                                    <option value="236" data-code="236">+236</option>
+                                    <option value="237" data-code="237">+237</option>
+                                    <option value="238" data-code="238">+238</option>
+                                    <option value="239" data-code="239">+239</option>
+                                    <option value="240" data-code="240">+240</option>
+                                    <option value="241" data-code="241">+241</option>
+                                    <option value="242" data-code="242">+242</option>
+                                    <option value="243" data-code="243">+243</option>
+                                    <option value="244" data-code="244">+244</option>
+                                    <option value="245" data-code="245">+245</option>
+                                    <option value="246" data-code="246">+246</option>
+                                    <option value="248" data-code="248">+248</option>
+                                    <option value="249" data-code="249">+249</option>
+                                    <option value="250" data-code="250">+250</option>
+                                    <option value="251" data-code="251">+251</option>
+                                    <option value="252" data-code="252">+252</option>
+                                    <option value="253" data-code="253">+253</option>
+                                    <option value="254" data-code="254">+254</option>
+                                    <option value="255" data-code="255">+255</option>
+                                    <option value="256" data-code="256">+256</option>
+                                    <option value="257" data-code="257">+257</option>
+                                    <option value="258" data-code="258">+258</option>
+                                    <option value="260" data-code="260">+260</option>
+                                    <option value="261" data-code="261">+261</option>
+                                    <option value="262" data-code="262">+262</option>
+                                    <option value="263" data-code="263">+263</option>
+                                    <option value="264" data-code="264">+264</option>
+                                    <option value="265" data-code="265">+265</option>
+                                    <option value="266" data-code="266">+266</option>
+                                    <option value="267" data-code="267">+267</option>
+                                    <option value="268" data-code="268">+268</option>
+                                    <option value="269" data-code="269">+269</option>
+                                    <option value="27" data-code="27">+27</option>
+                                    <option value="290" data-code="290">+290</option>
+                                    <option value="291" data-code="291">+291</option>
+                                    <option value="297" data-code="297">+297</option>
+                                    <option value="298" data-code="298">+298</option>
+                                    <option value="299" data-code="299">+299</option>
+                                    <option value="30" data-code="30">+30</option>
+                                    <option value="31" data-code="31">+31</option>
+                                    <option value="32" data-code="32">+32</option>
+                                    <option value="33" data-code="33">+33</option>
+                                    <option value="34" data-code="34">+34</option>
+                                    <option value="350" data-code="350">+350</option>
+                                    <option value="351" data-code="351">+351</option>
+                                    <option value="352" data-code="352">+352</option>
+                                    <option value="353" data-code="353">+353</option>
+                                    <option value="354" data-code="354">+354</option>
+                                    <option value="355" data-code="355">+355</option>
+                                    <option value="356" data-code="356">+356</option>
+                                    <option value="357" data-code="357">+357</option>
+                                    <option value="358" data-code="358">+358</option>
+                                    <option value="359" data-code="359">+359</option>
+                                    <option value="36" data-code="36">+36</option>
+                                    <option value="370" data-code="370">+370</option>
+                                    <option value="371" data-code="371">+371</option>
+                                    <option value="372" data-code="372">+372</option>
+                                    <option value="373" data-code="373">+373</option>
+                                    <option value="374" data-code="374">+374</option>
+                                    <option value="375" data-code="375">+375</option>
+                                    <option value="376" data-code="376">+376</option>
+                                    <option value="377" data-code="377">+377</option>
+                                    <option value="378" data-code="378">+378</option>
+                                    <option value="379" data-code="379">+379</option>
+                                    <option value="380" data-code="380">+380</option>
+                                    <option value="381" data-code="381">+381</option>
+                                    <option value="382" data-code="382">+382</option>
+                                    <option value="385" data-code="385">+385</option>
+                                    <option value="386" data-code="386">+386</option>
+                                    <option value="387" data-code="387">+387</option>
+                                    <option value="389" data-code="389">+389</option>
+                                    <option value="39" data-code="39">+39</option>
+                                    <option value="40" data-code="40">+40</option>
+                                    <option value="41" data-code="41">+41</option>
+                                    <option value="420" data-code="420">+420</option>
+                                    <option value="421" data-code="421">+421</option>
+                                    <option value="423" data-code="423">+423</option>
+                                    <option value="43" data-code="43">+43</option>
+                                    <option value="44" data-code="44">+44</option>
+                                    <option value="45" data-code="45">+45</option>
+                                    <option value="46" data-code="46">+46</option>
+                                    <option value="47" data-code="47">+47</option>
+                                    <option value="48" data-code="48">+48</option>
+                                    <option value="49" data-code="49">+49</option>
+                                    <option value="500" data-code="500">+500</option>
+                                    <option value="501" data-code="501">+501</option>
+                                    <option value="502" data-code="502">+502</option>
+                                    <option value="503" data-code="503">+503</option>
+                                    <option value="504" data-code="504">+504</option>
+                                    <option value="505" data-code="505">+505</option>
+                                    <option value="506" data-code="506">+506</option>
+                                    <option value="507" data-code="507">+507</option>
+                                    <option value="508" data-code="508">+508</option>
+                                    <option value="509" data-code="509">+509</option>
+                                    <option value="51" data-code="51">+51</option>
+                                    <option value="52" data-code="52">+52</option>
+                                    <option value="53" data-code="53">+53</option>
+                                    <option value="54" data-code="54">+54</option>
+                                    <option value="55" data-code="55">+55</option>
+                                    <option value="56" data-code="56">+56</option>
+                                    <option value="57" data-code="57">+57</option>
+                                    <option value="58" data-code="58">+58</option>
+                                    <option value="590" data-code="590">+590</option>
+                                    <option value="591" data-code="591">+591</option>
+                                    <option value="592" data-code="592">+592</option>
+                                    <option value="593" data-code="593">+593</option>
+                                    <option value="594" data-code="594">+594</option>
+                                    <option value="595" data-code="595">+595</option>
+                                    <option value="596" data-code="596">+596</option>
+                                    <option value="597" data-code="597">+597</option>
+                                    <option value="598" data-code="598">+598</option>
+                                    <option value="599" data-code="599">+599</option>
+                                    <option value="60" data-code="60">+60</option>
+                                    <option value="61" data-code="61">+61</option>
+                                    <option value="62" data-code="62">+62</option>
+                                    <option value="63" data-code="63">+63</option>
+                                    <option value="64" data-code="64">+64</option>
+                                    <option value="65" data-code="65">+65</option>
+                                    <option value="66" data-code="66">+66</option>
+                                    <option value="670" data-code="670">+670</option>
+                                    <option value="672" data-code="672">+672</option>
+                                    <option value="673" data-code="673">+673</option>
+                                    <option value="674" data-code="674">+674</option>
+                                    <option value="675" data-code="675">+675</option>
+                                    <option value="676" data-code="676">+676</option>
+                                    <option value="677" data-code="677">+677</option>
+                                    <option value="678" data-code="678">+678</option>
+                                    <option value="679" data-code="679">+679</option>
+                                    <option value="680" data-code="680">+680</option>
+                                    <option value="681" data-code="681">+681</option>
+                                    <option value="682" data-code="682">+682</option>
+                                    <option value="683" data-code="683">+683</option>
+                                    <option value="685" data-code="685">+685</option>
+                                    <option value="686" data-code="686">+686</option>
+                                    <option value="687" data-code="687">+687</option>
+                                    <option value="688" data-code="688">+688</option>
+                                    <option value="689" data-code="689">+689</option>
+                                    <option value="690" data-code="690">+690</option>
+                                    <option value="691" data-code="691">+691</option>
+                                    <option value="692" data-code="692">+692</option>
+                                    <option value="7" data-code="7">+7</option>
+                                    <option value="81" data-code="81">+81</option>
+                                    <option value="82" data-code="82">+82</option>
+                                    <option value="84" data-code="84">+84</option>
+                                    <option value="850" data-code="850">+850</option>
+                                    <option value="852" data-code="852">+852</option>
+                                    <option value="853" data-code="853">+853</option>
+                                    <option value="855" data-code="855">+855</option>
+                                    <option value="856" data-code="856">+856</option>
+                                    <option value="86" data-code="86">+86</option>
+                                    <option value="870" data-code="870">+870</option>
+                                    <option selected="selected" value="880" data-code="880">+880</option>
+                                    <option value="886" data-code="886">+886</option>
+                                    <option value="90" data-code="90">+90</option>
+                                    <option value="91" data-code="91">+91</option>
+                                    <option value="92" data-code="92">+92</option>
+                                    <option value="93" data-code="93">+93</option>
+                                    <option value="94" data-code="94">+94</option>
+                                    <option value="95" data-code="95">+95</option>
+                                    <option value="960" data-code="960">+960</option>
+                                    <option value="961" data-code="961">+961</option>
+                                    <option value="962" data-code="962">+962</option>
+                                    <option value="963" data-code="963">+963</option>
+                                    <option value="964" data-code="964">+964</option>
+                                    <option value="965" data-code="965">+965</option>
+                                    <option value="966" data-code="966">+966</option>
+                                    <option value="967" data-code="967">+967</option>
+                                    <option value="968" data-code="968">+968</option>
+                                    <option value="970" data-code="970">+970</option>
+                                    <option value="971" data-code="971">+971</option>
+                                    <option value="972" data-code="972">+972</option>
+                                    <option value="973" data-code="973">+973</option>
+                                    <option value="974" data-code="974">+974</option>
+                                    <option value="975" data-code="975">+975</option>
+                                    <option value="976" data-code="976">+976</option>
+                                    <option value="977" data-code="977">+977</option>
+                                    <option value="98" data-code="98">+98</option>
+                                    <option value="992" data-code="992">+992</option>
+                                    <option value="993" data-code="993">+993</option>
+                                    <option value="994" data-code="994">+994</option>
+                                    <option value="995" data-code="995">+995</option>
+                                    <option value="996" data-code="996">+996</option>
+                                    <option value="998" data-code="998">+998</option>
+                                </select>
+                            </div>
+                            <input style="width:100%;" autocomplete="off" id="sa-username" class="form-control" data-val="true" data-val-length="The field ID Or Mobile Or Email must be a string with a maximum length of 80." data-val-length-max="80" data-val-required="The ID Or Mobile Or Email field is required." name="Username" placeholder="Your Email Address" type="text" value="">
+                            <i class="icon_mail_alt"></i>
+                        </div>
+                        <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="password-type" autocomplete="off" type="hidden" value="0" name="PasswordType" />
+                        <label class="password-options"><a data-id="0" data-title="Your Password" class="active" style="">Password</a> </label>
+                        <input autocomplete="off" class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="20" data-val-length-min="6" data-val-required="The Password field is required." id="sm-password" name="Password" placeholder="Your  password" type="password" />
+                        <i class="icon_lock_alt"></i>
+                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        <div id="opt-option-box" class="row" style="margin-top:5px; display:none;">
+                            <div class="col-sm-8"><div id="sa-otp-timer" style="font-size: 12px;padding-top: 2px;display:none;">OTP will expire in <span></span></div></div>
+                            <div class="col-sm-4 text-right"><button style="padding:0 8px;" type="button" id="sa-send-otp" class="btn_1 ladda-button" data-style="slide-left">SEND OTP</button></div>
+                        </div>
+                    </div>
+                    <div class="clearfix add_bottom_15">
+                        <div class="float-right mt-1">
+                            <a id="forgot" class="forgot_link sm-form-link" href="#forgot-box" data-title="Recover Password">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="login-success-box" class="alert alert-success" style="display:none;"></div>
+                        <div id="login-error-box" class="alert alert-warning" style="display:none;"></div>
+                    </div>
+                    <div class="text-center" style="margin-top:15px; margin-bottom:15px;"><button type="submit" class="btn_1 full-width ladda-button disabled-item" id="login-btn" data-style="slide-left">LOGIN</button></div>
+                </form>
+                <div class="divider"><span>Or</span></div>
+                <form id="ext-login" method="post" action="/member/externallogin" role="form">
+                    <input name="__RequestVerificationToken" type="hidden" value="wIYE3HVMPw-oMnSwe2zRpakEhrHPkMTg51bMs78UUMgthdqNgbCiSU6fhGo3BVR31jNbfoh7sQXp_7-7WLg0-4KqjDblp9NYZKSHUQ2Symk1" />
+                    <input type="hidden" name="provider" class="ext-login-provider" value="" />
+                    <input type="hidden" name="rUrl" class="ext-login-url" value="" />
+                    <a href="#" data-id="Facebook" class="social_bt social-join facebook ladda-button disabled-item" data-style="slide-left">Login with Facebook</a>
+                    <a href="#" data-id="Google" class="social_bt social-join  google ladda-button disabled-item" data-style="slide-left">Login with Google</a>
+                </form>
+                <div class="text-center">
+                    Don’t have an account? <a href="/member/registration" data-title="Sign up">Sign up</a>
+                </div>
+            </div>
+            <div id="forgot-box" class="auth-forms  sign-in-wrapper" style="display:none;">
+                <form method="post" action="#" class="form-horizontal forgot-form" role="form">
+                    <input name="__RequestVerificationToken" type="hidden" value="0nzfNFxt06v8bauthJ4rC2I4qLk3pbMNanSEOgjR1K3dUSmy-IWdw2ELV5QSxjqaWNRbIACblvuI2J-69fm40wAaTXmemlbQnlmiZI-zKQc1" />
+                    <div class="form-group">
+                        <label>Preference</label>
+                        <div class="">
+                            <div class="app-radio inline">
+                                <label>
+                                    <input checked="checked" data-id="forgot-username" data-title="Email Address" class="login-preference" type="radio" value="1" name="ActionType"> Email&nbsp;<span></span>
+                                </label>
+                            </div>
+                            <div class="app-radio inline">
+                                <label>
+                                    <input data-id="forgot-username" data-title="Mobile number" class="login-preference" type="radio" value="2" name="ActionType"> Mobile&nbsp;<span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="">
+                            <div class="input-group-addon" style="display:none;">
+                                <select id="forgot-cc" class="minimal" name="CountryCode" style="width:85px;">
+                                    <option value="1" data-code="1">+1</option>
+                                    <option value="1242" data-code="1242">+1242</option>
+                                    <option value="1246" data-code="1246">+1246</option>
+                                    <option value="1264" data-code="1264">+1264</option>
+                                    <option value="1268" data-code="1268">+1268</option>
+                                    <option value="1284" data-code="1284">+1284</option>
+                                    <option value="1340" data-code="1340">+1340</option>
+                                    <option value="1345" data-code="1345">+1345</option>
+                                    <option value="1441" data-code="1441">+1441</option>
+                                    <option value="1473" data-code="1473">+1473</option>
+                                    <option value="1649" data-code="1649">+1649</option>
+                                    <option value="1664" data-code="1664">+1664</option>
+                                    <option value="1670" data-code="1670">+1670</option>
+                                    <option value="1671" data-code="1671">+1671</option>
+                                    <option value="1684" data-code="1684">+1684</option>
+                                    <option value="1721" data-code="1721">+1721</option>
+                                    <option value="1758" data-code="1758">+1758</option>
+                                    <option value="1767" data-code="1767">+1767</option>
+                                    <option value="1784" data-code="1784">+1784</option>
+                                    <option value="1868" data-code="1868">+1868</option>
+                                    <option value="1869" data-code="1869">+1869</option>
+                                    <option value="1876" data-code="1876">+1876</option>
+                                    <option value="20" data-code="20">+20</option>
+                                    <option value="211" data-code="211">+211</option>
+                                    <option value="212" data-code="212">+212</option>
+                                    <option value="213" data-code="213">+213</option>
+                                    <option value="216" data-code="216">+216</option>
+                                    <option value="218" data-code="218">+218</option>
+                                    <option value="220" data-code="220">+220</option>
+                                    <option value="221" data-code="221">+221</option>
+                                    <option value="222" data-code="222">+222</option>
+                                    <option value="223" data-code="223">+223</option>
+                                    <option value="224" data-code="224">+224</option>
+                                    <option value="225" data-code="225">+225</option>
+                                    <option value="226" data-code="226">+226</option>
+                                    <option value="227" data-code="227">+227</option>
+                                    <option value="228" data-code="228">+228</option>
+                                    <option value="229" data-code="229">+229</option>
+                                    <option value="230" data-code="230">+230</option>
+                                    <option value="231" data-code="231">+231</option>
+                                    <option value="232" data-code="232">+232</option>
+                                    <option value="233" data-code="233">+233</option>
+                                    <option value="234" data-code="234">+234</option>
+                                    <option value="235" data-code="235">+235</option>
+                                    <option value="236" data-code="236">+236</option>
+                                    <option value="237" data-code="237">+237</option>
+                                    <option value="238" data-code="238">+238</option>
+                                    <option value="239" data-code="239">+239</option>
+                                    <option value="240" data-code="240">+240</option>
+                                    <option value="241" data-code="241">+241</option>
+                                    <option value="242" data-code="242">+242</option>
+                                    <option value="243" data-code="243">+243</option>
+                                    <option value="244" data-code="244">+244</option>
+                                    <option value="245" data-code="245">+245</option>
+                                    <option value="246" data-code="246">+246</option>
+                                    <option value="248" data-code="248">+248</option>
+                                    <option value="249" data-code="249">+249</option>
+                                    <option value="250" data-code="250">+250</option>
+                                    <option value="251" data-code="251">+251</option>
+                                    <option value="252" data-code="252">+252</option>
+                                    <option value="253" data-code="253">+253</option>
+                                    <option value="254" data-code="254">+254</option>
+                                    <option value="255" data-code="255">+255</option>
+                                    <option value="256" data-code="256">+256</option>
+                                    <option value="257" data-code="257">+257</option>
+                                    <option value="258" data-code="258">+258</option>
+                                    <option value="260" data-code="260">+260</option>
+                                    <option value="261" data-code="261">+261</option>
+                                    <option value="262" data-code="262">+262</option>
+                                    <option value="263" data-code="263">+263</option>
+                                    <option value="264" data-code="264">+264</option>
+                                    <option value="265" data-code="265">+265</option>
+                                    <option value="266" data-code="266">+266</option>
+                                    <option value="267" data-code="267">+267</option>
+                                    <option value="268" data-code="268">+268</option>
+                                    <option value="269" data-code="269">+269</option>
+                                    <option value="27" data-code="27">+27</option>
+                                    <option value="290" data-code="290">+290</option>
+                                    <option value="291" data-code="291">+291</option>
+                                    <option value="297" data-code="297">+297</option>
+                                    <option value="298" data-code="298">+298</option>
+                                    <option value="299" data-code="299">+299</option>
+                                    <option value="30" data-code="30">+30</option>
+                                    <option value="31" data-code="31">+31</option>
+                                    <option value="32" data-code="32">+32</option>
+                                    <option value="33" data-code="33">+33</option>
+                                    <option value="34" data-code="34">+34</option>
+                                    <option value="350" data-code="350">+350</option>
+                                    <option value="351" data-code="351">+351</option>
+                                    <option value="352" data-code="352">+352</option>
+                                    <option value="353" data-code="353">+353</option>
+                                    <option value="354" data-code="354">+354</option>
+                                    <option value="355" data-code="355">+355</option>
+                                    <option value="356" data-code="356">+356</option>
+                                    <option value="357" data-code="357">+357</option>
+                                    <option value="358" data-code="358">+358</option>
+                                    <option value="359" data-code="359">+359</option>
+                                    <option value="36" data-code="36">+36</option>
+                                    <option value="370" data-code="370">+370</option>
+                                    <option value="371" data-code="371">+371</option>
+                                    <option value="372" data-code="372">+372</option>
+                                    <option value="373" data-code="373">+373</option>
+                                    <option value="374" data-code="374">+374</option>
+                                    <option value="375" data-code="375">+375</option>
+                                    <option value="376" data-code="376">+376</option>
+                                    <option value="377" data-code="377">+377</option>
+                                    <option value="378" data-code="378">+378</option>
+                                    <option value="379" data-code="379">+379</option>
+                                    <option value="380" data-code="380">+380</option>
+                                    <option value="381" data-code="381">+381</option>
+                                    <option value="382" data-code="382">+382</option>
+                                    <option value="385" data-code="385">+385</option>
+                                    <option value="386" data-code="386">+386</option>
+                                    <option value="387" data-code="387">+387</option>
+                                    <option value="389" data-code="389">+389</option>
+                                    <option value="39" data-code="39">+39</option>
+                                    <option value="40" data-code="40">+40</option>
+                                    <option value="41" data-code="41">+41</option>
+                                    <option value="420" data-code="420">+420</option>
+                                    <option value="421" data-code="421">+421</option>
+                                    <option value="423" data-code="423">+423</option>
+                                    <option value="43" data-code="43">+43</option>
+                                    <option value="44" data-code="44">+44</option>
+                                    <option value="45" data-code="45">+45</option>
+                                    <option value="46" data-code="46">+46</option>
+                                    <option value="47" data-code="47">+47</option>
+                                    <option value="48" data-code="48">+48</option>
+                                    <option value="49" data-code="49">+49</option>
+                                    <option value="500" data-code="500">+500</option>
+                                    <option value="501" data-code="501">+501</option>
+                                    <option value="502" data-code="502">+502</option>
+                                    <option value="503" data-code="503">+503</option>
+                                    <option value="504" data-code="504">+504</option>
+                                    <option value="505" data-code="505">+505</option>
+                                    <option value="506" data-code="506">+506</option>
+                                    <option value="507" data-code="507">+507</option>
+                                    <option value="508" data-code="508">+508</option>
+                                    <option value="509" data-code="509">+509</option>
+                                    <option value="51" data-code="51">+51</option>
+                                    <option value="52" data-code="52">+52</option>
+                                    <option value="53" data-code="53">+53</option>
+                                    <option value="54" data-code="54">+54</option>
+                                    <option value="55" data-code="55">+55</option>
+                                    <option value="56" data-code="56">+56</option>
+                                    <option value="57" data-code="57">+57</option>
+                                    <option value="58" data-code="58">+58</option>
+                                    <option value="590" data-code="590">+590</option>
+                                    <option value="591" data-code="591">+591</option>
+                                    <option value="592" data-code="592">+592</option>
+                                    <option value="593" data-code="593">+593</option>
+                                    <option value="594" data-code="594">+594</option>
+                                    <option value="595" data-code="595">+595</option>
+                                    <option value="596" data-code="596">+596</option>
+                                    <option value="597" data-code="597">+597</option>
+                                    <option value="598" data-code="598">+598</option>
+                                    <option value="599" data-code="599">+599</option>
+                                    <option value="60" data-code="60">+60</option>
+                                    <option value="61" data-code="61">+61</option>
+                                    <option value="62" data-code="62">+62</option>
+                                    <option value="63" data-code="63">+63</option>
+                                    <option value="64" data-code="64">+64</option>
+                                    <option value="65" data-code="65">+65</option>
+                                    <option value="66" data-code="66">+66</option>
+                                    <option value="670" data-code="670">+670</option>
+                                    <option value="672" data-code="672">+672</option>
+                                    <option value="673" data-code="673">+673</option>
+                                    <option value="674" data-code="674">+674</option>
+                                    <option value="675" data-code="675">+675</option>
+                                    <option value="676" data-code="676">+676</option>
+                                    <option value="677" data-code="677">+677</option>
+                                    <option value="678" data-code="678">+678</option>
+                                    <option value="679" data-code="679">+679</option>
+                                    <option value="680" data-code="680">+680</option>
+                                    <option value="681" data-code="681">+681</option>
+                                    <option value="682" data-code="682">+682</option>
+                                    <option value="683" data-code="683">+683</option>
+                                    <option value="685" data-code="685">+685</option>
+                                    <option value="686" data-code="686">+686</option>
+                                    <option value="687" data-code="687">+687</option>
+                                    <option value="688" data-code="688">+688</option>
+                                    <option value="689" data-code="689">+689</option>
+                                    <option value="690" data-code="690">+690</option>
+                                    <option value="691" data-code="691">+691</option>
+                                    <option value="692" data-code="692">+692</option>
+                                    <option value="7" data-code="7">+7</option>
+                                    <option value="81" data-code="81">+81</option>
+                                    <option value="82" data-code="82">+82</option>
+                                    <option value="84" data-code="84">+84</option>
+                                    <option value="850" data-code="850">+850</option>
+                                    <option value="852" data-code="852">+852</option>
+                                    <option value="853" data-code="853">+853</option>
+                                    <option value="855" data-code="855">+855</option>
+                                    <option value="856" data-code="856">+856</option>
+                                    <option value="86" data-code="86">+86</option>
+                                    <option value="870" data-code="870">+870</option>
+                                    <option selected="selected" value="880" data-code="880">+880</option>
+                                    <option value="886" data-code="886">+886</option>
+                                    <option value="90" data-code="90">+90</option>
+                                    <option value="91" data-code="91">+91</option>
+                                    <option value="92" data-code="92">+92</option>
+                                    <option value="93" data-code="93">+93</option>
+                                    <option value="94" data-code="94">+94</option>
+                                    <option value="95" data-code="95">+95</option>
+                                    <option value="960" data-code="960">+960</option>
+                                    <option value="961" data-code="961">+961</option>
+                                    <option value="962" data-code="962">+962</option>
+                                    <option value="963" data-code="963">+963</option>
+                                    <option value="964" data-code="964">+964</option>
+                                    <option value="965" data-code="965">+965</option>
+                                    <option value="966" data-code="966">+966</option>
+                                    <option value="967" data-code="967">+967</option>
+                                    <option value="968" data-code="968">+968</option>
+                                    <option value="970" data-code="970">+970</option>
+                                    <option value="971" data-code="971">+971</option>
+                                    <option value="972" data-code="972">+972</option>
+                                    <option value="973" data-code="973">+973</option>
+                                    <option value="974" data-code="974">+974</option>
+                                    <option value="975" data-code="975">+975</option>
+                                    <option value="976" data-code="976">+976</option>
+                                    <option value="977" data-code="977">+977</option>
+                                    <option value="98" data-code="98">+98</option>
+                                    <option value="992" data-code="992">+992</option>
+                                    <option value="993" data-code="993">+993</option>
+                                    <option value="994" data-code="994">+994</option>
+                                    <option value="995" data-code="995">+995</option>
+                                    <option value="996" data-code="996">+996</option>
+                                    <option value="998" data-code="998">+998</option>
+                                </select>
+                            </div>
+                            <input style="width: 100%;" autocomplete="off" id="forgot-username" class="form-control" data-val="true" data-val-length="The field Mobile Or Email must be a string with a maximum length of 80." data-val-length-max="80" data-val-required="The Mobile Or Email field is required." name="Username" placeholder="Your Mobile or Email" type="text" value="">
+                            <i class="icon_mail_alt"></i>
+                        </div>
+                        <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="text-center" style="margin-top:15px; margin-bottom:15px;"><button type="submit" class="btn_1 full-width ladda-button" id="forgot-btn" data-style="slide-left">RECOVER PASSWORD</button></div>
+                </form>
+                <div class="text-center">
+                    <div id="forgot-success-box" class="alert alert-success" style="display:none;"></div>
+                    <div id="forgot-error-box" class="alert alert-warning" style="display:none;"></div>
+                </div>
+                <div class="text-center">
+                    Already have an account? <a class="sm-form-link" href="#login-box" data-title="Login">Login</a>
+                </div>
+                <div class="text-center">
+                    Don’t have an account? <a href="/member/registration" data-title="Sign up">Sign up</a>
+                </div>
+            </div>
+            <div id="pass-verification-box" class="auth-forms sign-in-wrapper" style="display:none;">
+                <div class="text-center">
+                    <div id="code-success-box" class="alert alert-success" style="display:none;"></div>
+                </div>
+                <form id="verify-form" method="post" action="/member/verifycode" class="form-horizontal verify-form" role="form">
+                    <input name="__RequestVerificationToken" type="hidden" value="wyQu9HZyt2BbA8V0AYjV7q6rw8cSpqD6kYbb718KhG5AdKB7i583IH8sTUN2lfHTj4X9joassTMeaczsmLihM0sFUpCONVMHZCw94Oobz101" />
+                    <input id="code-url" type="hidden" name="Url" value="" />
+                    <input id="code-action" type="hidden" name="ActionType" value="" />
+                    <div class="form-group">
+                        <label>Your Mobile Or Email</label>
+                        <div class="">
+                            <div class="input-group-addon" style="display:none;">
+                                <select id="code-cc" class="minimal" name="CountryCode" style="width:85px;">
+                                    <option value="1" data-code="1">+1</option>
+                                    <option value="1242" data-code="1242">+1242</option>
+                                    <option value="1246" data-code="1246">+1246</option>
+                                    <option value="1264" data-code="1264">+1264</option>
+                                    <option value="1268" data-code="1268">+1268</option>
+                                    <option value="1284" data-code="1284">+1284</option>
+                                    <option value="1340" data-code="1340">+1340</option>
+                                    <option value="1345" data-code="1345">+1345</option>
+                                    <option value="1441" data-code="1441">+1441</option>
+                                    <option value="1473" data-code="1473">+1473</option>
+                                    <option value="1649" data-code="1649">+1649</option>
+                                    <option value="1664" data-code="1664">+1664</option>
+                                    <option value="1670" data-code="1670">+1670</option>
+                                    <option value="1671" data-code="1671">+1671</option>
+                                    <option value="1684" data-code="1684">+1684</option>
+                                    <option value="1721" data-code="1721">+1721</option>
+                                    <option value="1758" data-code="1758">+1758</option>
+                                    <option value="1767" data-code="1767">+1767</option>
+                                    <option value="1784" data-code="1784">+1784</option>
+                                    <option value="180918291849" data-code="180918291849">+180918291849</option>
+                                    <option value="1868" data-code="1868">+1868</option>
+                                    <option value="1869" data-code="1869">+1869</option>
+                                    <option value="1876" data-code="1876">+1876</option>
+                                    <option value="20" data-code="20">+20</option>
+                                    <option value="211" data-code="211">+211</option>
+                                    <option value="212" data-code="212">+212</option>
+                                    <option value="213" data-code="213">+213</option>
+                                    <option value="216" data-code="216">+216</option>
+                                    <option value="218" data-code="218">+218</option>
+                                    <option value="220" data-code="220">+220</option>
+                                    <option value="221" data-code="221">+221</option>
+                                    <option value="222" data-code="222">+222</option>
+                                    <option value="223" data-code="223">+223</option>
+                                    <option value="224" data-code="224">+224</option>
+                                    <option value="225" data-code="225">+225</option>
+                                    <option value="226" data-code="226">+226</option>
+                                    <option value="227" data-code="227">+227</option>
+                                    <option value="228" data-code="228">+228</option>
+                                    <option value="229" data-code="229">+229</option>
+                                    <option value="230" data-code="230">+230</option>
+                                    <option value="231" data-code="231">+231</option>
+                                    <option value="232" data-code="232">+232</option>
+                                    <option value="233" data-code="233">+233</option>
+                                    <option value="234" data-code="234">+234</option>
+                                    <option value="235" data-code="235">+235</option>
+                                    <option value="236" data-code="236">+236</option>
+                                    <option value="237" data-code="237">+237</option>
+                                    <option value="238" data-code="238">+238</option>
+                                    <option value="239" data-code="239">+239</option>
+                                    <option value="240" data-code="240">+240</option>
+                                    <option value="241" data-code="241">+241</option>
+                                    <option value="242" data-code="242">+242</option>
+                                    <option value="243" data-code="243">+243</option>
+                                    <option value="244" data-code="244">+244</option>
+                                    <option value="245" data-code="245">+245</option>
+                                    <option value="246" data-code="246">+246</option>
+                                    <option value="248" data-code="248">+248</option>
+                                    <option value="249" data-code="249">+249</option>
+                                    <option value="250" data-code="250">+250</option>
+                                    <option value="251" data-code="251">+251</option>
+                                    <option value="252" data-code="252">+252</option>
+                                    <option value="253" data-code="253">+253</option>
+                                    <option value="254" data-code="254">+254</option>
+                                    <option value="255" data-code="255">+255</option>
+                                    <option value="256" data-code="256">+256</option>
+                                    <option value="257" data-code="257">+257</option>
+                                    <option value="258" data-code="258">+258</option>
+                                    <option value="260" data-code="260">+260</option>
+                                    <option value="261" data-code="261">+261</option>
+                                    <option value="262" data-code="262">+262</option>
+                                    <option value="263" data-code="263">+263</option>
+                                    <option value="264" data-code="264">+264</option>
+                                    <option value="265" data-code="265">+265</option>
+                                    <option value="266" data-code="266">+266</option>
+                                    <option value="267" data-code="267">+267</option>
+                                    <option value="268" data-code="268">+268</option>
+                                    <option value="269" data-code="269">+269</option>
+                                    <option value="27" data-code="27">+27</option>
+                                    <option value="290" data-code="290">+290</option>
+                                    <option value="291" data-code="291">+291</option>
+                                    <option value="297" data-code="297">+297</option>
+                                    <option value="298" data-code="298">+298</option>
+                                    <option value="299" data-code="299">+299</option>
+                                    <option value="30" data-code="30">+30</option>
+                                    <option value="31" data-code="31">+31</option>
+                                    <option value="32" data-code="32">+32</option>
+                                    <option value="33" data-code="33">+33</option>
+                                    <option value="34" data-code="34">+34</option>
+                                    <option value="350" data-code="350">+350</option>
+                                    <option value="351" data-code="351">+351</option>
+                                    <option value="352" data-code="352">+352</option>
+                                    <option value="353" data-code="353">+353</option>
+                                    <option value="354" data-code="354">+354</option>
+                                    <option value="355" data-code="355">+355</option>
+                                    <option value="356" data-code="356">+356</option>
+                                    <option value="357" data-code="357">+357</option>
+                                    <option value="358" data-code="358">+358</option>
+                                    <option value="359" data-code="359">+359</option>
+                                    <option value="36" data-code="36">+36</option>
+                                    <option value="370" data-code="370">+370</option>
+                                    <option value="371" data-code="371">+371</option>
+                                    <option value="372" data-code="372">+372</option>
+                                    <option value="373" data-code="373">+373</option>
+                                    <option value="374" data-code="374">+374</option>
+                                    <option value="375" data-code="375">+375</option>
+                                    <option value="376" data-code="376">+376</option>
+                                    <option value="377" data-code="377">+377</option>
+                                    <option value="378" data-code="378">+378</option>
+                                    <option value="379" data-code="379">+379</option>
+                                    <option value="380" data-code="380">+380</option>
+                                    <option value="381" data-code="381">+381</option>
+                                    <option value="382" data-code="382">+382</option>
+                                    <option value="385" data-code="385">+385</option>
+                                    <option value="386" data-code="386">+386</option>
+                                    <option value="387" data-code="387">+387</option>
+                                    <option value="389" data-code="389">+389</option>
+                                    <option value="39" data-code="39">+39</option>
+                                    <option value="40" data-code="40">+40</option>
+                                    <option value="41" data-code="41">+41</option>
+                                    <option value="420" data-code="420">+420</option>
+                                    <option value="421" data-code="421">+421</option>
+                                    <option value="423" data-code="423">+423</option>
+                                    <option value="43" data-code="43">+43</option>
+                                    <option value="44" data-code="44">+44</option>
+                                    <option value="45" data-code="45">+45</option>
+                                    <option value="46" data-code="46">+46</option>
+                                    <option value="47" data-code="47">+47</option>
+                                    <option value="48" data-code="48">+48</option>
+                                    <option value="49" data-code="49">+49</option>
+                                    <option value="500" data-code="500">+500</option>
+                                    <option value="501" data-code="501">+501</option>
+                                    <option value="502" data-code="502">+502</option>
+                                    <option value="503" data-code="503">+503</option>
+                                    <option value="504" data-code="504">+504</option>
+                                    <option value="505" data-code="505">+505</option>
+                                    <option value="506" data-code="506">+506</option>
+                                    <option value="507" data-code="507">+507</option>
+                                    <option value="508" data-code="508">+508</option>
+                                    <option value="509" data-code="509">+509</option>
+                                    <option value="51" data-code="51">+51</option>
+                                    <option value="52" data-code="52">+52</option>
+                                    <option value="53" data-code="53">+53</option>
+                                    <option value="54" data-code="54">+54</option>
+                                    <option value="55" data-code="55">+55</option>
+                                    <option value="56" data-code="56">+56</option>
+                                    <option value="57" data-code="57">+57</option>
+                                    <option value="58" data-code="58">+58</option>
+                                    <option value="590" data-code="590">+590</option>
+                                    <option value="591" data-code="591">+591</option>
+                                    <option value="592" data-code="592">+592</option>
+                                    <option value="593" data-code="593">+593</option>
+                                    <option value="594" data-code="594">+594</option>
+                                    <option value="595" data-code="595">+595</option>
+                                    <option value="596" data-code="596">+596</option>
+                                    <option value="597" data-code="597">+597</option>
+                                    <option value="598" data-code="598">+598</option>
+                                    <option value="599" data-code="599">+599</option>
+                                    <option value="60" data-code="60">+60</option>
+                                    <option value="61" data-code="61">+61</option>
+                                    <option value="62" data-code="62">+62</option>
+                                    <option value="63" data-code="63">+63</option>
+                                    <option value="64" data-code="64">+64</option>
+                                    <option value="65" data-code="65">+65</option>
+                                    <option value="66" data-code="66">+66</option>
+                                    <option value="670" data-code="670">+670</option>
+                                    <option value="672" data-code="672">+672</option>
+                                    <option value="673" data-code="673">+673</option>
+                                    <option value="674" data-code="674">+674</option>
+                                    <option value="675" data-code="675">+675</option>
+                                    <option value="676" data-code="676">+676</option>
+                                    <option value="677" data-code="677">+677</option>
+                                    <option value="678" data-code="678">+678</option>
+                                    <option value="679" data-code="679">+679</option>
+                                    <option value="680" data-code="680">+680</option>
+                                    <option value="681" data-code="681">+681</option>
+                                    <option value="682" data-code="682">+682</option>
+                                    <option value="683" data-code="683">+683</option>
+                                    <option value="685" data-code="685">+685</option>
+                                    <option value="686" data-code="686">+686</option>
+                                    <option value="687" data-code="687">+687</option>
+                                    <option value="688" data-code="688">+688</option>
+                                    <option value="689" data-code="689">+689</option>
+                                    <option value="690" data-code="690">+690</option>
+                                    <option value="691" data-code="691">+691</option>
+                                    <option value="692" data-code="692">+692</option>
+                                    <option value="7" data-code="7">+7</option>
+                                    <option value="81" data-code="81">+81</option>
+                                    <option value="82" data-code="82">+82</option>
+                                    <option value="84" data-code="84">+84</option>
+                                    <option value="850" data-code="850">+850</option>
+                                    <option value="852" data-code="852">+852</option>
+                                    <option value="853" data-code="853">+853</option>
+                                    <option value="855" data-code="855">+855</option>
+                                    <option value="856" data-code="856">+856</option>
+                                    <option value="86" data-code="86">+86</option>
+                                    <option value="870" data-code="870">+870</option>
+                                    <option selected="selected" value="880" data-code="880">+880</option>
+                                    <option value="886" data-code="886">+886</option>
+                                    <option value="90" data-code="90">+90</option>
+                                    <option value="91" data-code="91">+91</option>
+                                    <option value="92" data-code="92">+92</option>
+                                    <option value="93" data-code="93">+93</option>
+                                    <option value="94" data-code="94">+94</option>
+                                    <option value="95" data-code="95">+95</option>
+                                    <option value="960" data-code="960">+960</option>
+                                    <option value="961" data-code="961">+961</option>
+                                    <option value="962" data-code="962">+962</option>
+                                    <option value="963" data-code="963">+963</option>
+                                    <option value="964" data-code="964">+964</option>
+                                    <option value="965" data-code="965">+965</option>
+                                    <option value="966" data-code="966">+966</option>
+                                    <option value="967" data-code="967">+967</option>
+                                    <option value="968" data-code="968">+968</option>
+                                    <option value="970" data-code="970">+970</option>
+                                    <option value="971" data-code="971">+971</option>
+                                    <option value="972" data-code="972">+972</option>
+                                    <option value="973" data-code="973">+973</option>
+                                    <option value="974" data-code="974">+974</option>
+                                    <option value="975" data-code="975">+975</option>
+                                    <option value="976" data-code="976">+976</option>
+                                    <option value="977" data-code="977">+977</option>
+                                    <option value="98" data-code="98">+98</option>
+                                    <option value="992" data-code="992">+992</option>
+                                    <option value="993" data-code="993">+993</option>
+                                    <option value="994" data-code="994">+994</option>
+                                    <option value="995" data-code="995">+995</option>
+                                    <option value="996" data-code="996">+996</option>
+                                    <option value="998" data-code="998">+998</option>
+                                </select>
+                            </div>
+                            <input style="width: 100%;" autocomplete="off" id="code-username" class="form-control sa-username " data-val="true" data-val-length="The field Mobile Or Email must be a string with a maximum length of 80." data-val-length-max="80" data-val-required="The Mobile Or Email field is required." name="Username" placeholder="Your Mobile or Email" type="text" value="">
+                            <i class="icon_mail_alt"></i>
+                        </div>
+                        <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Verification Code</label>
+                        <input type="text" class="form-control" name="ConfirmPassword" placeholder="Enter verification code" data-val="true" data-val-length="The Code must be at least 6 characters long." data-val-length-max="20" data-val-length-min="6" data-val-required="The Code field is required." />
+                        <i class="icon_lock_alt"></i>
+                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        <div id="code-option-box" class="row" style="margin-top:5px;">
+                            <div class="col-sm-8"><div id="sa-code-timer" style="font-size: 12px;padding-top: 2px;display:none;">Code will expire in <span></span></div></div>
+                            <div class="col-sm-4 text-right"><button style="padding:0 8px;" type="button" id="sa-send-code" class="btn btn-sm btn-info ladda-button" data-style="slide-left">Re-SEND</button></div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top:15px; margin-bottom:15px;"><button type="submit" class="btn_1 full-width ladda-button" id="verify-btn" data-style="slide-left">VERIFY CODE</button></div>
+                </form>
+                <div class="text-center">
+                    <div id="code-error-box" class="alert alert-warning" style="display:none;"></div>
+                </div>
+                <div class="text-center">
+                    Already have an account? <a class="sm-form-link" href="#login-box" data-title="Login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="google-join-btn" style="display:none;"></button>
+    <div id="toTop"></div>
+
+    <script src="~/Content/panagea/js/jquery-2.2.4.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/panagea/js/common_scripts.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/panagea/js/main.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/wait-me/waitMe.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/ladda/spin.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/ladda/ladda.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/sweetalert2/sweetalert2.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/app/smart-auth.js?v=1.3" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/app/dsb-custom.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script type="e40a44cb2071203296c3da0f-text/javascript">
+        $(function () {
+            'use strict';
+            //Scroll to top
+            $(window).on('scroll', function () {
+                'use strict';
+                if ($(this).scrollTop() != 0) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+
+            $('#toTop').on('click', function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+        });
+
+    </script>
+
+    <script src="~/Content/lib/select2/js/select2.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/touchspin/jquery.bootstrap-touchspin.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/easy-autocomplete/jquery.easy-autocomplete.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/easy-ticker/jquery.easy-ticker.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Content/lib/easy-ticker/jquery.easing.min.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/app/search-flights.js?v=23.0" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="~/Scripts/app/home.js?v=2.1" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js" type="e40a44cb2071203296c3da0f-text/javascript"></script>
+    <script type="e40a44cb2071203296c3da0f-text/javascript">
+        $(document).ready(function () {
+            //LoadRecentSearch();
+        });
+    </script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="e40a44cb2071203296c3da0f-|49" defer=""></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6036cae23b841a46","version":"2020.12.1","si":10}'></script>
+</body>
+</html>
